@@ -13,7 +13,7 @@ smserver is an event handler that uses SMS messaging. smserver uses Twilio and f
 * a Twilio bought phone number
 * Connection to the internet
 
-Creating a Twilio account is simple and easy, you will need to verify a phone number for your account, make sure you verify the phone number that will be the receiving number for the server, smserver can only send to one verified number, to increase this you can upgrade your Twilio account for $20 a month subscription.
+Creating a Twilio account is simple and easy, you will first need to verify a phone number for your account, make sure you verify the phone number that will be the receiving number for the server, smserver can only send to one verified number, to increase this you can upgrade your Twilio account for $20 a month subscription.
 
 _creating a Twilio account_
 
@@ -68,11 +68,11 @@ once this is done you can run smserver.py, then send the command .status to your
 
 _running in the background_
 
-smserver does not run well in the background while receiving messages still works the event checker will not, it's recommended that if plan to background smserver to do so with nohub, nohup can be installed with : 
+smserver does not run well in the background while receiving messages still works the event checker will not, it's recommended that if you plan to background smserver.py to do so with nohub, nohup can be installed with : 
 ```
 apt-get install nohup
 ```
-and then running
+and then run
 ```
 nohub python3 smserver.py &
 ```

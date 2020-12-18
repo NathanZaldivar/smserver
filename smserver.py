@@ -16,7 +16,7 @@ Linkedin: https://www.linkedin.com/in/nathan-zaldivar-10853a140/
 
 
 installation instructions can be found on the github page.
-https://github.com/NathanZaldivar/smsserver
+https://github.com/NathanZaldivar/smserver
 '''
 
 

@@ -1,33 +1,33 @@
 # smserver
 
-smserver is a event handler that uses sms messaging. smserver uses twilio and flask.
+smserver is an event handler that uses SMS messaging. smserver uses Twilio and flask.
 
 
-**Requriments**
+**Requirements**
 
 5 main things you will need for smserver to work:
 
-* twilio account sid
-* twilio auth token
+* Twilio account sid
+* Twilio auth token
 * a working phone number
-* a twilio bought phone number
-* connection to the internet
+* a Twilio bought phone number
+* Connection to the internet
 
-Creating a twilio acount is simple and easy, you will need to verify a phone number for your account, make sure you verify the phone number that will be the reciving number for the server, smserver can only send to one verifyed number, to increase this you can upgrade your twilio acount for $20 a month subcription.
+Creating a Twilio account is simple and easy, you will need to verify a phone number for your account, make sure you verify the phone number that will be the receiving number for the server, smserver can only send to one verified number, to increase this you can upgrade your Twilio account for $20 a month subscription.
 
-_creating a twilio account_
+_creating a Twilio account_
 
 visit : https://www.twilio.com/try-twilio
 
-once you verify your account and phone number you will need to grab 3 things the account sid, auth token, and a twilio phone number.
+once you verify your account and phone number you will need to grab 3 things the account sid, auth token, and a Twilio phone number.
 
-the auth token and sid can be found here once you login : https://www.twilio.com/console
+the auth token and sid can be found here once you log in: https://www.twilio.com/console
 
-next is to get a phone number, these are very cheap costing $1 per number and the sms messeging fees are based on contents beeing sent, ive desighned smserver to reduce cost to a minimum but keep in mind that each sms message sent by the server will cost a avaerage of 0.007 cents, the good thing is that twilio trail acount gives you $15 which will last a while.
+next is to get a phone number, these are very cheap costing $1 per number and the SMS messaging fees are based on contents being sent, I've designed smserver to reduce the cost to a minimum but keep in mind that each SMS message sent by the server will cost an average of 0.007 cents, the good thing is that Twilio trial account gives you $15 which will last a while.
 
-twilio phone numbers can be found here : https://www.twilio.com/console/phone-numbers/search
+Twilio phone numbers can be found here : https://www.twilio.com/console/phone-numbers/search
 
-is recomended to get a phonenumber that is closest to your region to reduce cost.
+is recommended to get a phone number that is closest to your region to reduce cost.
 
 **Installation**
 
@@ -39,8 +39,8 @@ python3 -m pip install -r requirements.txt
 
 this will download the required modules for smserver.
 
-next is to paste the requred info into smserver.py, open smserver with a text editor perfearbly a IDE but notepad will work.
-paste the **account sid**, **auth token**, **your phone number**, **twilio phone number**, and your **private IPV4 for the machine your running the server on**.
+next is to paste the required info into smserver.py, open smserver with a text editor preferably an IDE but notepad will work.
+paste the **account sid**, **auth token**, **your phone number**, **Twilio phone number**, and your **private IPV4 for the machine you're running the server on**.
 
 Like so:
 
@@ -60,15 +60,15 @@ once you do this you can save and close.
 
 _Port fowarding_
 
-The next and final step is to port foward to 59999 to the IPV4 of your machine for protocol TCP, this can be done by opening your routers settings and doing it there. if you're unfimilar with port fowarding a guide can be found here : https://www.howtogeek.com/66214/how-to-forward-ports-on-your-router/
+The next and final step is to port forward to 59999 to the IPV4 of your machine for protocol TCP, this can be done by opening your router's settings and doing it there. if you're unfamiliar with port forwarding a guide can be found here : https://www.howtogeek.com/66214/how-to-forward-ports-on-your-router/
 be sure to set your ip of your machine to static, the guide goes over this in detail.
 
-once this is done you can run smserver.py, then send the command .status to your twilio phone number from your verified phone number to check if its up!
+once this is done you can run smserver.py, then send the command .status to your Twilio phone number from your verified phone number to check if it's up!
 
 
 _running in the background_
 
-smserver does not run well in the background while reciving messages still works the event checker will not, its recomended that if plan to background smserver to do so with with nohub, nohup can be installed with : 
+smserver does not run well in the background while receiving messages still works the event checker will not, it's recommended that if plan to background smserver to do so with nohub, nohup can be installed with : 
 ```
 apt-get install nohup
 ```
@@ -78,7 +78,7 @@ nohub python3 smserver.py &
 ```
 **Features**
 
-smserver handles both reciving, adding, removing and alerting events to your phone. all commands are shown here :
+smserver handles both receiving, adding, removing, and alerting events to your phone. all commands are shown here :
 
 ```
 commands:
@@ -105,7 +105,7 @@ Debug:
 
 _background_scheduler_
 
-the event checker is a background process that every 12 hours checks if an event is comming up, sending you a message if its due. this can be changed by editing smserver.py under the background_scheduler funtion:
+the event checker is a background process that every 12 hours checks if an event is coming up, sending you a message if it's due. this can be changed by editing smserver.py under the background_scheduler function:
 ```
 def background_scheduler():
     schedule.every(12).hours.do(Handle.event_checker)

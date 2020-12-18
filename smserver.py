@@ -69,7 +69,10 @@ class Event_Handler:
         self.events = {}
         with open(self.memory) as events:
             for i in events.readlines():
-                self.events.update({key:value for key, value in [i.strip().split('|')]})
+                if '###' in i:
+                    continue
+                else:
+                    self.events.update({key:value for key, value in [i.strip().split('|')]})
 
     def sms_send(self, message):
         client.messages.create(to=phone_number, from_=twilio_phone_number,body=message)

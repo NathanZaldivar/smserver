@@ -72,6 +72,10 @@ smserver does not run well in the background while reciving messages still works
 ```
 apt-get install nohup
 ```
+and then running
+```
+nohub python3 smserver.py &
+```
 **Features**
 
 smserver handles both reciving, adding, removing and alerting events to your phone. all commands are shown here :

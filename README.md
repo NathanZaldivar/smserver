@@ -1,2 +1,3 @@
 # smserver
- sample text
+
+event handler via sms messaging using twilio and flask

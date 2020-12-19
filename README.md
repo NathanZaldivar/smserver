@@ -105,6 +105,8 @@ Debug:
 
 _background_scheduler_
 
+Thanks to tgrtim for this solution.
+
 the event checker is a background process that every 12 hours checks if an event is coming up, sending you a message if it's due. this can be changed by editing smserver.py under the background_scheduler function:
 ```
 def background_scheduler():
